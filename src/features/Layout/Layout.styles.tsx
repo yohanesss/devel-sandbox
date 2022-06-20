@@ -29,8 +29,11 @@ export const SidebarLayoutListingItemMainContainer = styled.ul<SidebarLayoutList
     padding-bottom: 5px;
     padding-left: 10px;
     list-style: none;
+    cursor: pointer;
+    width: fit-content;
 
     &:nth-child(1) {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;

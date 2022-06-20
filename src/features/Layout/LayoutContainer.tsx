@@ -23,6 +23,10 @@ export const LayoutContainer = ({ children }: LayoutContainerProps) => {
               label: "React Context",
               path: "/global-state-management/react-context",
             },
+            {
+              label: "React Calculator",
+              path: "/global-state-management/react-calculator",
+            },
           ]}
         />
       </SidebarLayoutContainer>

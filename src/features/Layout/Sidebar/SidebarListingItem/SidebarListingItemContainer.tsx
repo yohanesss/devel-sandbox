@@ -21,7 +21,7 @@ export const SidebarListingItemContainer = ({
   return (
     <SidebarLayoutListingItemMainContainer isOpened={isOpened}>
       {parentLabel && (
-        <li>
+        <li onClick={() => setIsOpened((prevState) => !prevState)}>
           <h3>{parentLabel}</h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,6 @@ export const SidebarListingItemContainer = ({
             fill="currentColor"
             className="bi bi-chevron-down"
             viewBox="0 0 16 16"
-            onClick={() => setIsOpened((prevState) => !prevState)}
           >
             <path
               fillRule="evenodd"

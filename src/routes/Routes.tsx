@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { ReactCalculatorMainContainer } from "../features/Layout/Sandbox/ReactContext/MiscProjects/ReactCalculator/ReactCalculatorMainContainer";
+import { ReactContextContainer } from "../features/Layout/Sandbox/ReactContext/ReactContextContainer";
 
 interface IRoute {
   path: string;
@@ -17,7 +19,13 @@ export const routes: IRoute[] = [
   {
     path: "/global-state-management/react-context",
     name: "React Context",
-    element: <h1>React Context</h1>,
+    element: <ReactContextContainer />,
+    protected: false,
+  },
+  {
+    path: "/global-state-management/react-calculator",
+    name: "React Calculator",
+    element: <ReactCalculatorMainContainer />,
     protected: false,
   },
 ];
