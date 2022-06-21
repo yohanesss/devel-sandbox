@@ -26,6 +26,7 @@ export const CalculatorScreenContainer = styled.div`
   margin-bottom: 10px;
   padding: 0 10px;
   background-color: #4357692d;
+  font-size: 2em;
   border-radius: 10px;
   display: flex;
   align-items: center;

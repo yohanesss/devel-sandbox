@@ -15,24 +15,24 @@ const btnValues = [
 export const ReactCalculatorMainContainer = () => {
   const [calc, setCalc] = useState({
     sign: "",
-    num: "0",
-    res: "0",
+    num: 0,
+    res: 0,
   });
 
   const numClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const value = e.currentTarget.innerHTML;
 
-    if (calc.num.length < 16) {
+    if (calc.num.toString().length < 16) {
       setCalc({
         ...calc,
         num:
-          calc.num === "0" && value === "0"
-            ? "0"
-            : +calc.num % 1 === 0
-            ? calc.num + value
-            : calc.num + value,
-        res: !calc.sign ? "0" : calc.res,
+          calc.num === 0 && value === "0"
+            ? 0
+            : calc.num % 1 === 0
+            ? Number(calc.num + value)
+            : Number(calc.num + value),
+        res: !calc.sign ? 0 : calc.res,
       });
     }
   };
@@ -43,7 +43,9 @@ export const ReactCalculatorMainContainer = () => {
 
     setCalc({
       ...calc,
-      num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
+      num: !calc.num.toString().includes(".")
+        ? Number(calc.num + value)
+        : calc.num,
     });
   };
 
@@ -55,7 +57,7 @@ export const ReactCalculatorMainContainer = () => {
       ...calc,
       sign: value,
       res: !calc.res && calc.num ? calc.num : calc.res,
-      num: "0",
+      num: 0,
     });
   };
 
@@ -73,11 +75,11 @@ export const ReactCalculatorMainContainer = () => {
       setCalc({
         ...calc,
         res:
-          calc.num === "0" && calc.sign === "/"
-            ? "Can't divide with 0"
-            : "" + math(Number(calc.res), Number(calc.num), calc.sign),
+          calc.num === 0 && calc.sign === "/"
+            ? 0
+            : math(Number(calc.res), Number(calc.num), calc.sign),
         sign: "",
-        num: "0",
+        num: 0,
       });
     }
   };
@@ -85,21 +87,20 @@ export const ReactCalculatorMainContainer = () => {
   const invertClickHandler = () => {
     setCalc({
       ...calc,
-      num: calc.num ? "" + Number(calc.num) * -1 : "0",
-      res: calc.res ? "" + Number(calc.res) * -1 : "0",
+      num: calc.num ? calc.num * -1 : 0,
+      res: calc.res ? calc.res * -1 : 0,
       sign: "",
     });
   };
 
   const percentClickHandler = () => {
-    console.log("[calc]", calc);
-    let num = calc.num ? parseFloat(calc.num) : 0;
-    let res = calc.res ? parseFloat(calc.res) : 0;
+    let num = calc.num ? parseFloat(calc.num.toString()) : 0;
+    let res = calc.res ? parseFloat(calc.res.toString()) : 0;
 
     setCalc({
       ...calc,
-      num: "" + (num /= Math.pow(100, 1)),
-      res: "" + (res /= Math.pow(100, 1)),
+      num: (num /= Math.pow(100, 1)),
+      res: (res /= Math.pow(100, 1)),
       sign: "",
     });
   };
@@ -108,8 +109,8 @@ export const ReactCalculatorMainContainer = () => {
     setCalc({
       ...calc,
       sign: "",
-      num: "0",
-      res: "0",
+      num: 0,
+      res: 0,
     });
   };
 
