@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ReactCalculatorMainContainer } from "../features/Layout/Sandbox/ReactContext/MiscProjects/ReactCalculator/ReactCalculatorMainContainer";
+import { TodolistContainer } from "../features/Layout/Sandbox/ReactContext/MiscProjects/TodoList/TodolistContainer";
 import { ReactContextContainer } from "../features/Layout/Sandbox/ReactContext/ReactContextContainer";
 
 interface IRoute {
@@ -23,9 +24,15 @@ export const routes: IRoute[] = [
     protected: false,
   },
   {
-    path: "/global-state-management/react-calculator",
+    path: "/projects/react-calculator",
     name: "React Calculator",
     element: <ReactCalculatorMainContainer />,
+    protected: false,
+  },
+  {
+    path: "/projects/todo-list",
+    name: "Todo List",
+    element: <TodolistContainer />,
     protected: false,
   },
 ];

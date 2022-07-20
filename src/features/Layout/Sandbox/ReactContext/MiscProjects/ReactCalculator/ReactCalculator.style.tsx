@@ -62,7 +62,7 @@ export const CalculatorButtonContainer = styled.button<CalculatorButtonContainer
   border-radius: 10px;
   outline: none;
 
-  &:hover {
+  &:active {
     background-color: ${(props) =>
       props.buttonType === "equal" ? "rgb(228, 39, 15)" : "rgb(61, 43, 184)"};
   }

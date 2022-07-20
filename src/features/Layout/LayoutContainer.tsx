@@ -23,9 +23,18 @@ export const LayoutContainer = ({ children }: LayoutContainerProps) => {
               label: "React Context",
               path: "/global-state-management/react-context",
             },
+          ]}
+        />
+        <SidebarListingItemContainer
+          parentLabel={"Projects"}
+          items={[
+            {
+              label: "Todo List",
+              path: "/projects/todo-list",
+            },
             {
               label: "React Calculator",
-              path: "/global-state-management/react-calculator",
+              path: "/projects/react-calculator",
             },
           ]}
         />
