@@ -9,6 +9,7 @@ type TodoItemProps = {
 export const TodoItem = ({ todo, toggleTodo }: TodoItemProps) => {
   return (
     <li
+      id={todo.id}
       style={todo.completed ? { textDecoration: "line-through" } : {}}
       onClick={() => toggleTodo(todo.id)}
     >

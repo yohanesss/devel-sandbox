@@ -18,7 +18,12 @@ export const TodoInput = ({ addTodo }: TodoInputProps) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={(e) => setUserInput(e.target.value)} value={userInput} />
+      <input
+        type="text"
+        name="todo-input"
+        onChange={(e) => setUserInput(e.target.value)}
+        value={userInput}
+      />
     </form>
   );
 };

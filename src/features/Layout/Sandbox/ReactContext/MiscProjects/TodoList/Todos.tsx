@@ -11,7 +11,12 @@ export const Todos = ({ todos, toggleTodo }: TodosProps) => {
   return (
     <ul>
       {todos.map((_todo) => (
-        <TodoItem key={_todo.id} todo={_todo} toggleTodo={toggleTodo} />
+        <TodoItem
+          key={_todo.id}
+          todo={_todo}
+          toggleTodo={toggleTodo}
+          aria-labelledby="todo list"
+        />
       ))}
     </ul>
   );
